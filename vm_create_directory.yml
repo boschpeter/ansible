@@ -1,8 +1,25 @@
-
 # To run this, name this file vm_create_directoryh.yml and run the following in the same directory
 # ansible-playbook  -l dingofarm_workers vm_create_directory.yml
-- name: Create a directory if it does not exist
-  file:
-    path: /Projects/scratch
-    state: directory
-    mode: '0755'
+---
+    - hosts: all
+      gather_facts: no
+     
+      tasks:
+      - name: Ansible check directory.
+        stat:
+         path: /home/boscp08/Projects
+        register: my_folder
+     
+      - name: "echo if directory already existed"
+        debug:
+          msg: "the Project directory is already existed"
+        when: my_folder.stat.exists
+     
+      - name: "Ansible Create directory if not exists"
+        file:
+         path: /home/boscp08/Projects
+         state: directory
+         mode: 0755
+         group: boscp08
+         owner: boscp08
+        when: my_folder.stat.exists == false

@@ -1,11 +1,10 @@
 # To run this, name this file vm_touch.yml and run the following in the same directory
-# ansible-playbook  -l dingofarm_workers vm_clone_socialcoin-api.yml  
+# ansible-playbook  -l dingofarm_workers vm_clone_socialcoin-api.yml  -k -K
 ---
-- hosts: all
-  tasks:
- 
-    - name: Download the code from the GitRepo
-       - git:
-        repo: https://github.com/boschpeter/ansible-examples.git
-        dest: /home/boscp08/Projects/scratch/virtual-insanity/waardepapieren
-
+    - hosts: all
+    sudo: true
+    tasks:
+     - name: updates a server
+       apt: update_cache=yes
+     - name: upgrade a server
+       apt: upgrade=dist

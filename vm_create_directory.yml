@@ -1,0 +1,8 @@
+
+# To run this, name this file vm_create_directoryh.yml and run the following in the same directory
+# ansible-playbook  -l dingofarm_workers vm_create_directory.yml
+- name: Create a directory if it does not exist
+  file:
+    path: /Projects/scratch
+    state: directory
+    mode: '0755'

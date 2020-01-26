@@ -1,4 +1,4 @@
-# To run this, name this file vm_touch.ymml and run the following in the same directory
+# To run this, name this file vm_touch.yml and run the following in the same directory
 # ansible-playbook  -l dingofarm_workers vm_touch.yml  
 - hosts: all
   tasks:

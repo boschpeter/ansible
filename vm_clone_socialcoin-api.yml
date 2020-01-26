@@ -1,10 +1,11 @@
 # To run this, name this file vm_touch.yml and run the following in the same directory
-# ansible-playbook  -l dingofarm_workers vm_clone_socialcoin-api.yml  -k -K
----
-    - hosts: all
-    sudo: true
-    tasks:
-     - name: updates a server
-       apt: update_cache=yes
-     - name: upgrade a server
-       apt: upgrade=dist
+# ansible-playbook  -l dingofarm_workers vm_clone_socialcoin-api.yml  -K
+
+- hosts: all
+  tasks:
+
+- name: Install git
+  apt:
+    name: git
+    state: present
+    update_cache: yes

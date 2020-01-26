@@ -7,7 +7,7 @@
       tasks:
       - name: Ansible check directory.
         stat:
-         path: /home/boscp08/Projects
+         path: /home/boscp08/Projects/scratch/virtual_insanity
         register: my_folder
      
       - name: "echo if directory already existed"
@@ -17,7 +17,7 @@
      
       - name: "Ansible Create directory if not exists"
         file:
-         path: /home/boscp08/Projects
+         path: /home/boscp08/Projects/scratch/virtual_insanity
          state: directory
          mode: 0755
          group: boscp08

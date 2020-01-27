@@ -1,0 +1,12 @@
+# To run this, name this file vm_touch.yml and run the following in the same directory
+# ansible-playbook  -l dingofarm_workers -i hosts  vm_apt_get_update.yml  -k -K
+---
+  - hosts: all
+    become: yes
+    tasks: 
+    - name: Install packages
+      apt:
+        name:
+        - mysql-server
+        state: latest
+        cache_valid_time: 3600    # update cache if more than an hour old

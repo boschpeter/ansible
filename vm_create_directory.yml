@@ -1,5 +1,5 @@
 # To run this, name this file vm_create_directoryh.yml and run the following in the same directory
-# ansible-playbook  -l dingofarm_workers vm_create_directory.yml
+# ansible-playbook   vm_create_directory.yml -i hosts
 ---
     - hosts: all
       gather_facts: no
@@ -8,6 +8,8 @@
       - name: Ansible check directory.
         stat:
          path: /home/boscp08/Projects/scratch/virtual_insanity
+         args:
+         warn: false # set warn=false to prevent warning
         register: my_folder
      
       - name: "echo if directory already existed"

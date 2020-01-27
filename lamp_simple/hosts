@@ -1,7 +1,6 @@
 [webservers]
-web3
+ubuntuvbx ansible_user=boscp08
 
 [dbservers]
-web2
-
+ubuntuvbx2 ansible_user=boscp08
 

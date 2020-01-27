@@ -6,3 +6,43 @@
     file:
       path: "/home/boscp08/devops_server.txt"
       state: touch
+# boscp08s-Mac-mini:ansible boscp08$ ansible-playbook  vm_touch.yml -i hosts
+#
+#PLAY [all] *******************************************************************************************************************************************
+#
+#TASK [Gathering Facts] *******************************************************************************************************************************
+#ok: [ubuntuvbx2]
+#ok: [ubuntuvbx]
+#
+#TASK [Ansible create file if it doesn't exist example] ***********************************************************************************************
+#changed: [ubuntuvbx2]
+#changed: [ubuntuvbx]
+#
+#PLAY RECAP *******************************************************************************************************************************************
+#ubuntuvbx                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+#ubuntuvbx2                 : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0 
+
+## config file for ansible -- http://ansible.com/
+## ==============================================
+## /Users/boscp08/Projects/scratch/virtual-insanity/ansible/ansible.cfg
+## nearly all parameters can be overridden in ansible-playbook
+## or with command line flags. ansible will read ANSIBLE_CONFIG,
+## ansible.cfg in the current working directory, .ansible.cfg in
+## the home directory or /etc/ansible/ansible.cfg, whichever it
+## finds first
+
+#[defaults]
+
+# some basic default values...
+
+#inventory      = hosts
+#forks          = 50
+#host_key_checking = False
+#retry_files_enabled = False
+#no_target_syslog = False
+#callback_whitelist = time
+#command_warnings = False
+#deprecation_warnings = False
+#
+#[ssh_connection]
+#scp_if_ssh = True

@@ -17,11 +17,11 @@
 
 [djangofarm_workers]
 #192.168.2.[5:7]
-192.168.2.5 ansible_user=boscp08
-192.168.2.7 ansible_user=boscp08
-#ubuntuVBX  #192.168.2.5
-#ubuntuVMX  #192.168.2.7
+ubuntuvbx ansible_user=boscp08
+ubuntuvbx2 ansible_user=boscp08
 
+#10.248.78.107   ubuntuvbx
+#10.248.78.9     ubuntuvbx2
 
 # Ex 2: A collection of hosts belonging to the 'webservers' group
 

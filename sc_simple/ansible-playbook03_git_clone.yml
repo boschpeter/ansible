@@ -8,5 +8,10 @@
         git:
          #repo: 'https://boschpeter:Peter\!2020@github.com/boschpeter/ansible.git'
          #dest: /home/boscp08/Projects/scratch/virtual-insanity/ansible
-         repo: 'https://boschpeter:Peter\!2020@gitlab.com/socialcoin/socialcoin-api'
+         #repo: 'https://bosch.peter@icloud.com:Peter\!2020@gitlab.com/socialcoin/socialcoin-api.git'
+         repo: 'https://bosch.peter\@icloud.com@gitlab.com/socialcoin/socialcoin-api.git'
          dest: /home/boscp08/Projects/scratch/virtual-insanity/socialcoin-api          
+         depth: 1
+         key_file: /Users/boscp08/.ssh/id_rsa.pub
+         accept_hostkey: yes
+         clone: yes    

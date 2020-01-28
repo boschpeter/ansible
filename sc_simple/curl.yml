@@ -11,8 +11,6 @@
          state: latest
          cache_valid_time: 3600    # update cache if more than an hour old  
 
-      hosts: all
       tasks: 
       - name: Run a command 
         shell:  curl -o bfg.bash  https://raw.githubusercontent.com/boschpeter/waardepapieren/master/bfg.bash
-       

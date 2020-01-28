@@ -1,32 +1,10 @@
+# Example git checkout from Ansible Playbooks
 # To run this, name this file ansible-playbook03_ and run the following in the same directory
 # ansible-playbook  ansible-playbook03_git_clone.yml  -i hosts -K
 ---
-- hosts: dingofarm_workers
+- hosts: all
   tasks:
       - name: clone repo 
-
-# Example git checkout from Ansible Playbooks
         git:
          repo: 'https://boschpeter:Peter\!2020@github.com/boschpeter/ansible.git'
          dest: /home/boscp08/Projects/scratch/virtual-insanity/ansible
-
-
-#https://user:pass@github.com/path
-# https://www.jeffgeerling.com/blog/2018/cloning-private-github-repositories-ansible-on-remote-server-through-ssh
-
-boscp08s-Mac-mini:sc_simple boscp08$ ansible-playbook ansible-playbook03_git_clone.yml -i hosts -K
-BECOME password: 
-
-PLAY [dingofarm_workers] *******************************************************
-
-TASK [Gathering Facts] *********************************************************
-ok: [ubuntuvbx]
-ok: [ubuntuvbx2]
-
-TASK [clone repo] **************************************************************
-changed: [ubuntuvbx2]
-changed: [ubuntuvbx]
-
-PLAY RECAP *********************************************************************
-ubuntuvbx                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-ubuntuvbx2                 : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

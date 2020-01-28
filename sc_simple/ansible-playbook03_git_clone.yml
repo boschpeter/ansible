@@ -6,5 +6,7 @@
   tasks:
       - name: clone repo 
         git:
-         repo: 'https://boschpeter:Peter\!2020@github.com/boschpeter/ansible.git'
-         dest: /home/boscp08/Projects/scratch/virtual-insanity/ansible
+         #repo: 'https://boschpeter:Peter\!2020@github.com/boschpeter/ansible.git'
+         #dest: /home/boscp08/Projects/scratch/virtual-insanity/ansible
+         repo: 'https://boschpeter:Peter\!2020@gitlab.com/socialcoin/socialcoin-api'
+         dest: /home/boscp08/Projects/scratch/virtual-insanity/socialcoin-api          

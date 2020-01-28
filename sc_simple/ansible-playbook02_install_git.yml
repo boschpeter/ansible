@@ -1,5 +1,5 @@
-# To run this, name this file ansible-playbook05_install_mysql.yml and run the following in the same directory
-# ansible-playbook   ansible-playbook02_git_clone.yml   -i hosts -K
+# To run this, name this file ansible-playbook02_install_git.yml and run the following in the same directory
+# ansible-playbook   ansible-playbook02_git_install.yml  -i hosts -K
 ---
   - hosts: all
     become: yes

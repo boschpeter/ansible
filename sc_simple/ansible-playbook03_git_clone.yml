@@ -1,0 +1,11 @@
+# To run this, name this file ansible-playbook03_ and run the following in the same directory
+# ansible-playbook  ansible-playbook03_git_clone.yml  -i hosts -K
+---
+- hosts: dingofarm_workers
+  tasks:
+      - name: clone repo 
+        git:
+            repo: git@github.com:boschpeter/ansible.git
+            dest: /home/boscp08/Projects/scratch/virtual-insanity
+
+# https://www.jeffgeerling.com/blog/2018/cloning-private-github-repositories-ansible-on-remote-server-through-ssh

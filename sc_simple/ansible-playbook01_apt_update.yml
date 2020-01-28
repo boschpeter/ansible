@@ -1,5 +1,5 @@
 # To run this, name this file ansible-playbook05_install_mysql.yml and run the following in the same directory
-# ansible-playbook  -l dingofarm_workers -i hosts  ansible-playbook01_apt_update.yml  -k -K
+# ansible-playbook  ansible-playbook01_apt_update.yml  -i hosts  -k -K
 ---
   - hosts: all
     become: true

@@ -1,0 +1,43 @@
+
+#ansible dingofarm_workers -i hosts -m ping
+#ansible-playbook  ansible-playbook01_apt_update.yml  -i hosts -k -K
+#ansible-playbook  ansible-playbook02_install_git.yml -i hosts -K
+#ansible-playbook  ansible-playbook03_git_clone.yml   -i hosts
+
+# To run this, name this file ansible-playbook05_install_mysql.yml and run the following in the same directory
+# ansible-playbook  ansible-playbook01_apt_update.yml  -i hosts  -k -K
+---
+    - hosts: all
+      become: true
+      tasks: 
+      - name: Update and upgrade apt packages
+        apt:
+            upgrade: yes
+            update_cache: yes
+            cache_valid_time: 86400 #One day
+
+
+# To run this, name this file ansible-playbook02_install_git.yml and run the following in the same directory
+# ansible-playbook   ansible-playbook02_install_git.yml  -i hosts -K
+
+    - hosts: all
+      become: yes
+      tasks: 
+      - name: Install packages
+        apt:
+          name:
+          - git
+          state: latest
+          cache_valid_time: 3600    # update cache if more than an hour old
+  
+# Example git checkout from Ansible Playbooks
+# To run this, name this file ansible-playbook03_ and run the following in the same directory
+# ansible-playbook  ansible-playbook03_git_clone.yml  -i hosts
+
+    - hosts: all
+      tasks:
+          - name: clone repo 
+            git:
+             repo: 'https://boschpeter:Peter\!2020@github.com/boschpeter/socialcoin-api.git'
+             dest: /home/boscp08/Projects/scratch/virtual-insanity/socialcoin-api
+             

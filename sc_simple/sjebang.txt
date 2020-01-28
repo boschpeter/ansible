@@ -1,0 +1,3 @@
+ansible-playbook  ansible-playbook01_apt_update.yml  -i hosts -k -K
+ansible-playbook  ansible-playbook02_install_git.yml -i hosts -K
+ansible-playbook  ansible-playbook03_git_clone.yml   -i hosts

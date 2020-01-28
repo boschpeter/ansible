@@ -2,4 +2,4 @@
 
 [dingofarm_workers]
 ubuntuvbx ansible_user=boscp08
-ubuntuvmx ansible_user=boscp08
+ubuntuvbx2 ansible_user=boscp08

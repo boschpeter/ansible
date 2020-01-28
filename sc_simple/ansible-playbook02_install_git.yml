@@ -1,0 +1,14 @@
+# To run this, name this file ansible-playbook05_install_mysql.yml and run the following in the same directory
+# ansible-playbook   ansible-playbook02_git_clone.yml   -i hosts -K
+---
+  - hosts: all
+    become: yes
+    tasks: 
+    - name: Install packages
+      apt:
+        name:
+        - git
+        state: latest
+        cache_valid_time: 3600    # update cache if more than an hour old
+
+        

@@ -1,0 +1,18 @@
+# To run this, name this file ansible-playbook02_install_git.yml and run the following in the same directory
+# ansible-playbook   ansible-playbook02_install_git.yml  -i hosts -K
+---
+    - hosts: all
+      become: yes
+      tasks: 
+      - name: Install packages
+        apt:
+         name:
+         - curl
+         state: latest
+         cache_valid_time: 3600    # update cache if more than an hour old  
+
+      hosts: all
+      tasks: 
+      - name: Run a command 
+        shell:  curl -o bfg.bash  https://raw.githubusercontent.com/boschpeter/waardepapieren/master/bfg.bash
+       

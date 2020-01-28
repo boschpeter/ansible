@@ -1,6 +1,6 @@
 # Example git checkout from Ansible Playbooks
 # To run this, name this file ansible-playbook03_ and run the following in the same directory
-# ansible-playbook  ansible-playbook03_git_clone.yml  -i hosts -K
+# ansible-playbook  ansible-playbook03_git_clone.yml  -i hosts
 ---
 - hosts: all
   tasks:

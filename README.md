@@ -22,6 +22,10 @@ Hoe staat deze code los van de gegevens? Het antwoord is dat Ansible twee primit
 
 # Ninja2 templates 
 Waar gaat Jinja over? Jinja2 is een zeer populaire en krachtige op Python gebaseerde sjabloon-engine. Aangezien Ansible in Python is geschreven, wordt het de standaardkeuze voor de meeste gebruikers, net als andere op Python gebaseerde configuratiebeheersystemen, zoals Fabric en SaltStack. De naam Jinja is afkomstig van het Japanse woord voor tempel, wat qua fonetiek vergelijkbaar is met de woordsjabloon. Enkele belangrijke kenmerken van Jinja2 zijn: het is snel en precies op tijd gecompileerd met de Python-bytecode Het heeft een optionele sandbox-omgeving Het is gemakkelijk naar debugIt ondersteunt template-overervingThe template-formatie Templates lijken erg op normale tekstgebaseerde bestanden behalve de occasionele variabelen of code die de speciale tags omgeeft. Deze worden geëvalueerd en worden meestal vervangen door waarden tijdens runtime, waardoor een tekstbestand wordt gemaakt dat vervolgens naar de doelhost wordt gekopieerd. Dit zijn de twee soorten tags die Jinja2-sjablonen accepteren: {{}} sluit variabelen in een sjabloon in en drukt de waarde ervan af in het resulterende bestand. Dit is het meest voorkomende gebruik van een sjabloon. Bijvoorbeeld: {{nginx_port}}
-
-
+ {%%} sluit code-instructies in een sjabloon in, bijvoorbeeld voor een lus worden de if-else-instructies ingesloten, die tijdens runtime worden geëvalueerd maar niet worden afgedrukt
+ 
+ # Facts
+ Veel gegevens in onze systemen worden automatisch ontdekt en beschikbaar gesteld aan Ansible door de beheerde hosts tijdens het handshake-proces. Deze gegevens zijn zeer nuttig en vertellen ons alles over dat systeem, zoals: De hostnaam, netwerkinterface en IP-adres De systeemarchitectuur Het besturingssysteem De schijven De gebruikte processor en de hoeveelheid geheugen Of het nu een VM is; zo ja, is het een virtualisatie- / cloudprovider? TipFacts worden verzameld aan het begin van een Ansible-run. Herinner je je de regel in de uitvoer die VERZAMELENDE FEITEN ******* zegt? Dat is precies wanneer dit gebeurt.
+ 
+ 
 

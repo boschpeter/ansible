@@ -41,7 +41,13 @@ tot zover  feiten, variabelen en sjablonen.
 # Templating the Nginx configurations
 Laten we nu onze Nginx-rol transformeren tot gegevensgestuurd. We beginnen met het sjablonen van het default.conf-bestand voor Nginx dat we eerder hebben gemaakt. De aanpak voor het converteren van een bestand naar een sjabloon zou als volgt zijn: M
 
-## 1 maak de mappen die nodig zijn om sjablonen en standaardvariabelen in een rol te houden: $ mkdir rollen / nginx / templates $ mkdir rollen / nginx / defaults 
+## 1 maak de mappen die nodig zijn om sjablonen en standaardvariabelen in een rol te houden: 
+
+````$ mkdir rollen / nginx / templates ````
+````$ mkdir rollen / nginx / defaults```` 
+
+````ansible-galaxy init --init-path roles/ nginx````
+
 
 ## 2
 Begin altijd met het eigenlijke configuratiebestand, ons eindresultaat van dit proces, om alle parameters te kennen die het zou kosten. relax. De configuratie voor het bestand default.conf op ons systeem is bijvoorbeeld als volgt: server {luister 80; servernaam localhost; locatie / {root / usr / share / nginx / html; index index.html; }} 

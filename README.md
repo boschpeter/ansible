@@ -27,5 +27,12 @@ Waar gaat Jinja over? Jinja2 is een zeer populaire en krachtige op Python gebase
  # Facts
  Veel gegevens in onze systemen worden automatisch ontdekt en beschikbaar gesteld aan Ansible door de beheerde hosts tijdens het handshake-proces. Deze gegevens zijn zeer nuttig en vertellen ons alles over dat systeem, zoals: De hostnaam, netwerkinterface en IP-adres De systeemarchitectuur Het besturingssysteem De schijven De gebruikte processor en de hoeveelheid geheugen Of het nu een VM is; zo ja, is het een virtualisatie- / cloudprovider? TipFacts worden verzameld aan het begin van een Ansible-run. Herinner je je de regel in de uitvoer die VERZAMELENDE FEITEN ******* zegt? Dat is precies wanneer dit gebeurt.
  
- 
+# Variabelen 
+ ## Variablen de default-directory  binnen een rol 
+Waar en hoe een variabele kan worden gedefinieerd, is een complex fenomeen, omdat Ansible in dit opzicht overvloedige keuzes biedt. Dit biedt gebruikers ook veel flexibiliteit om delen van hun infrastructuur verschillend te configureren. Alle Linux-hosts in een productieomgeving moeten bijvoorbeeld lokale pakketrepository's of webservers gebruiken voor staging en moeten op poort 8080 worden uitgevoerd. Dit alles zonder de code te wijzigen, en alleen aangestuurd door gegevens, gebeurt door variabelen. plaatsen waar Ansible variabelen accepteert: de default-directory  binnen een rol 
+
+## Inventory variabelen 
+De parameters host_vars en group_vars gedefinieerd in afzonderlijke mappen. De parameter host / group vars gedefinieerd in een inventarisbestand Variabelen in playbooks en rolparameters De map vars in een rol en variabelen gedefinieerd in een verstrekte play 
+
+##  Extra-variabelen met de optie -e tijdens runtime
 

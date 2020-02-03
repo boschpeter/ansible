@@ -78,5 +78,31 @@ Gebruik het  ontdekte feit in de sjabloon in plaats van een door de gebruiker ge
 
 Voor rollen / nginx / templates / default.conf.j2 wordt het resulterende bestand bijvoorbeeld
 
+rollen / nginx / templates / default.conf.j2 
+ 
+ ````
+ server {
+    listen {{nginx_port}}; 
+    servername {{ansible_hostname}}; 
+ 
+ location / {
+   root {{nginx_root}}; 
+    index {{nginx_index}}; 
+   }
+  } 
+ ````
+ 
+#4 create roles / nginx / defaults / main.yml 
+
+en sla de normale standaardwaarden op als volgt: --- #file: rollen / nginx / defaults / main.yml 
+````
+nginx_port: 80 
+nginx_root: / usr / share / nginx / html 
+nginx_index: index.html
+````
+
+Zodra de sjabloon is gemaakt, wijzigt u de taak in het configure.yml-bestand om de sjabloon te gebruiken in plaats van de kopieermodule: 
+
+ten slotte is het tijd om het statische bestand te verwijderen dat we eerder met de kopieermodule hebben gebruikt
 
 

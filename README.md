@@ -36,3 +36,41 @@ De parameters host_vars en group_vars gedefinieerd in afzonderlijke mappen. De p
 
 ##  Extra-variabelen met de optie -e tijdens runtime
 
+tot zover  feiten, variabelen en sjablonen.
+
+# Templating the Nginx configurations
+Laten we nu onze Nginx-rol transformeren tot gegevensgestuurd. We beginnen met het sjablonen van het default.conf-bestand voor Nginx dat we eerder hebben gemaakt. De aanpak voor het converteren van een bestand naar een sjabloon zou als volgt zijn: M
+
+## 1 maak de mappen die nodig zijn om sjablonen en standaardvariabelen in een rol te houden: $ mkdir rollen / nginx / templates $ mkdir rollen / nginx / defaults 
+
+## 2
+Begin altijd met het eigenlijke configuratiebestand, ons eindresultaat van dit proces, om alle parameters te kennen die het zou kosten. relax. De configuratie voor het bestand default.conf op ons systeem is bijvoorbeeld als volgt: server {luister 80; servernaam localhost; locatie / {root / usr / share / nginx / html; index index.html; }} 
+
+## 3
+Identificeer de configuratieparameters die u dynamisch wilt genereren, verwijder de waarden voor die parameters, noteer ze afzonderlijk en vervang ze door sjabloonvariabelen: 
+
+Template Snippets: 
+ listen {{nginx_port}}
+ root {{ nginx_root }}; 
+ index {{ nginx_index }}; 
+ 
+ Variables: 
+ nginx_port: 80 
+ nginx_root: /usr/share/nginx/html 
+ nginx_index: index.html
+ 
+De waarden voor een van de configuratieparameters worden verondersteld  afkomstig te zijn van feiten, meestal systeemparameters of topologie-informatie, zoals de hostnaam, het IP-adres, enzovoort, zoek dan de relevante feiten met behulp van de volgende opdracht: 
+
+Bijvoorbeeld: ````$ ansible -i customhosts www -m setup | less ````
+
+Om de hostnaam van het systeem te achterhalen: 
+````ansible -i customhosts dingofarm_workers-m setup | grep -i hostname ````
+"ansible_hostname": "ubuntuVBX2, 
+"ansible_hostname": "ubuntuVBX", 
+
+Gebruik het  ontdekte feit in de sjabloon in plaats van een door de gebruiker gedefinieerde variabele. Bijvoorbeeld: servernaam {{ansible_hostname}}, sla het resulterende bestand op in de map van de sjabloon, idealiter met de extensie .j2. 
+
+Voor rollen / nginx / templates / default.conf.j2 wordt het resulterende bestand bijvoorbeeld
+
+
+

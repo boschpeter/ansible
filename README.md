@@ -102,7 +102,7 @@ nginx_index: index.html
 ````
 
 Zodra de sjabloon is gemaakt, wijzigt u de taak in het configure.yml-bestand om de sjabloon te gebruiken in plaats van de kopieermodule: 
-
+![templating](https://github.com/boschpeter/ansible/blob/master/pictures/role_nginx_task_configuration.PNG)
 ten slotte is het tijd om het statische bestand te verwijderen dat we eerder met de kopieermodule hebben gebruikt
 
 

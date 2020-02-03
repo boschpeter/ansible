@@ -83,8 +83,7 @@ Template Snippets:
  
 De waarden voor een van de configuratieparameters worden verondersteld  afkomstig te zijn van feiten, meestal systeemparameters of topologie-informatie, zoals de hostnaam, het IP-adres, enzovoort, zoek dan de relevante feiten met behulp van de volgende opdracht: Bijvoorbeeld: ````$ ansible -i customhosts www -m setup | less ````
 
-## 4 ansible -i customhosts dingofarm_workers-m setup | grep -i hostname 
-Gebruik het  ontdekte feit in de sjabloon in plaats van een door de gebruiker gedefinieerde variabele. 
+## 4 Gebruik het  ontdekte feit in de sjabloon in plaats van een door de gebruiker gedefinieerde variabele. 
 
 Bijvoorbeeld: servernaam {{ansible_hostname}}, Om de hostnaam van het systeem te achterhalen: 
 ````ansible -i customhosts dingofarm_workers-m setup | grep -i hostname ````
@@ -92,9 +91,10 @@ Bijvoorbeeld: servernaam {{ansible_hostname}}, Om de hostnaam van het systeem te
 "ansible_hostname": "ubuntuVBX2, 
 "ansible_hostname": "ubuntuVBX", 
 
-## 5 rollen / nginx / templates / default.conf.j2 
+## 5 sla het resulterende bestand op in de map van het sjabloon template,  idealiter met de extensie .j2. 
 
-sla het resulterende bestand op in de map van de sjabloon, idealiter met de extensie .j2. 
+**rollen / nginx / templates / default.conf.j2 **
+
 Voor rollen / nginx / templates / default.conf.j2 wordt het resulterende bestand bijvoorbeeld
 rollen / nginx / templates / default.conf.j2 
  
@@ -110,11 +110,13 @@ rollen / nginx / templates / default.conf.j2
   } 
  ````
  
-#4 create roles / nginx / defaults / main.yml 
+# 6 en sla de normale standaardwaarden op als volgt: ---
+create roles / nginx / defaults / main.yml 
+ 
 
-en sla de normale standaardwaarden op als volgt: --- 
+#file:
 
-#file: rollen / nginx / defaults / main.yml 
+**rollen / nginx / defaults / main.yml **
 ````
 nginx_port: 80 
 nginx_root: / usr / share / nginx / html 

@@ -2,8 +2,11 @@
 
 # ansible
 
-Met Ansible kunt u een hele omgeving voorzien van een enkele opdracht en enkele eenvoudige SSH-opdrachten automatiseren. Automatische implementaties zijn tegenwoordig in zwang. Het lijkt steeds relevanter te worden om te weten hoe automatisering moet worden aangepakt. Ansible is een Zwitsers zakmes voor DevOps, in staat om veel krachtige automatiseringstaken uit te voeren met de flexibiliteit om zich aan te passen aan vele omgevingen en workflows. Aan de hand van voorbeelden uit de echte wereld deelt dezer repo hopelijk "de essentie" voor alle Ansible-gebruikers. Of je nu gloednieuw bent bij Ansible of op zoek bent naar een opfriscursus, de wiki  biedt de best practices die je moet weten. (dat is tenminste mijn gedachte)
+Met Ansible kunt u deen hele omgeving voorzien van een enkele opdracht en enkele eenvoudige SSH-opdrachten automatiseren. Automatische implementaties zijn tegenwoordig in zwang. Het lijkt steeds relevanter te worden om te weten hoe automatisering moet worden aangepakt. Ansible is een Zwitsers zakmes voor DevOps, in staat om veel krachtige automatiseringstaken uit te voeren met de flexibiliteit om zich aan te passen aan vele omgevingen en workflows. Aan de hand van voorbeelden uit de echte wereld deelt dezer repo hopelijk "de essentie" voor alle Ansible-gebruikers. Of je nu gloednieuw bent bij Ansible of op zoek bent naar een opfriscursus, de wiki  biedt de best practices die je moet weten. (dat is tenminste mijn gedachte)
 Lessons-learned 
+
+Ansible is een stukje agentloze configuratiebeheersoftware die via SSH verbinding kan maken met unix-achtige (bijv. Linux) en Windows-gebaseerde computers om instructies te leveren. Deze instructies zijn normaal geschreven in YAML-bestanden (wat staat voor YAML Ain't Markup Language) -bestanden genaamd playbooks. Playbooks bevatten rollen (toneelstukken), die taken bevatten (die opeenvolgend worden uitgevoerd) en taken kunnen modules aanroepen (die in mijn favoriete taal, Python kunnen worden geschreven).
+
 
 Ansible is een radicaal eenvoudig IT-automatiseringsplatform dat uw applicaties en systemen eenvoudiger inzetbaar maakt. Vermijd het schrijven van scripts of aangepaste code om uw applicaties te implementeren en bij te werken - automatiseer in een taal die gewoon Engels benadert, met behulp van SSH, zonder agenten om op externe systemen te installeren
 
